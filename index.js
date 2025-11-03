@@ -2,11 +2,24 @@
 // service_nwzj30j
 // OqRDYKkaj4i6cTFUu
 
+let isModalOpen = false;
+let contrastToggle = false;
+
+function toggleContrast() {
+    contrastToggle = !contrastToggle;
+    if (contrastToggle) {
+        document.body.classList += " dark-theme"
+    }
+    else {
+        document.body.classList.remove("dark-theme") 
+    }   
+}
+
 function contact(event) {
     event.preventDefault();
 const loading = document.querySelector('.modal__overlay--loading')
 const success = document.querySelector('.modal__overlay--success')
-loading.classList.add(" modal__overlay--visible");
+loading.classList +=" modal__overlay--visible";
 
 emailjs
     .sendForm(
@@ -15,14 +28,14 @@ emailjs
         event.target,
         'OqRDYKkaj4i6cTFUu'
 ).then(() => {
-    loading.classList.remove(" modal__overlay--visible");
-    success.classList.add(" modal__overlay--visible");
+    loading.classList.remove("modal__overlay--visible");
+    success.classList += " modal__overlay--visible";
 }).catch(() => {
     
 })
 }
 
-let isModalOpen = false;
+
 function toggleModal() {
     if (isModalOpen) {
         isModalOpen = false;
