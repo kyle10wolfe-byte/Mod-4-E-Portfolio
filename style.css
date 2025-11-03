@@ -38,6 +38,8 @@ button {
     background-color: rgb(245, 245, 245);
 }
 
+
+
 .container {
     padding: 50px 0;
     width: 100%;
@@ -279,10 +281,18 @@ MODAL
     width: 90%;
     max-width: 1100px;
     height: 700px;
-    box-shadow: 0 20px 80px 0 rgb(0, 0, 0, 0.45);
     border-radius: 20px;
     overflow: hidden;
     display: flex;
+    visibility: hidden;
+    z-index: -1;
+    transition: visibility 1s, z-index 1s, box-shadow 0.5s ease;
+}
+
+.modal--open .modal {
+    z-index: 60;
+    box-shadow: 0 20px 80px 0 rgb(0, 0, 0, 0.45);
+    visibility: visible;
 }
 
 .modal__half {
